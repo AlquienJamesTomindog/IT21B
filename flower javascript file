@@ -1,0 +1,23 @@
+class Flower{
+  constructor(name, color, bloomingSeason, isFragrant) {
+    this.name = name;
+    this.color = color;
+    this.bloomingSeason = bloomingSeason;
+    this.isFragrant = isFragrant;
+  }
+
+  
+  describe() {
+    return ${this.name} is a ${this.color} flower that blooms in ${this.bloomingSeason} and it ${this.isFragrant ? 'is' : 'is not'} fragrant.;
+  }
+}
+
+
+const rose = new Flower('Rose', 'red', 'spring', true);
+
+
+const sunflower = new Flower('Sunflower', 'yellow', 'summer', false);
+
+
+console.log(rose.describe()); 
+console.log(sunflower.describe())
