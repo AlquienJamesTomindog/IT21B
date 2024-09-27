@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Class Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .flower {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flower Information</h1>
+    <div id="flower-info"></div>
+
+    <script>
+        
+        class Flower {
+            constructor(name, color, bloomingSeason, isFragrant) {
+                this.name = name;
+                this.color = color;
+                this.bloomingSeason = bloomingSeason;
+                this.isFragrant = isFragrant;
+            }
+
+            describe() {
+                return ${this.name} is a ${this.color} flower that blooms in ${this.bloomingSeason} and it ${this.isFragrant ? 'is' : 'is not'} fragrant.;
+            }
+        }
+
+        
+        const rose = new Flower('Rose', 'red', 'spring', true);
+        const sunflower = new Flower('Sunflower', 'yellow', 'summer', false);
+
+        
+        function displayFlowerInfo(flower) {
+            const flowerInfoDiv = document.getElementById('flower-info');
+            const flowerElement = document.createElement('div');
+            flowerElement.className = 'flower';
+            flowerElement.textContent = flower.describe();
+            flowerInfoDiv.appendChild(flowerElement);
+        }
+
+        
+        displayFlowerInfo(rose);
+        displayFlowerInfo(sunflower);
+    </script>
+</body>
+</html>
